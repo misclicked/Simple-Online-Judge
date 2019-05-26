@@ -1,6 +1,6 @@
 {
   "name": "@misclicked/simple-online-judge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a simple online judge",
   "main": "beep_boop.js",
   "scripts": {
