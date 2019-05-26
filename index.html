@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://www.google.com/jsapi"></script>
+        <script language="javascript">
+            google.load('prototype', '1.6.0.2');
+        </script>
+<style type="text/css" media="screen">#editor {
+    position: relative;
+    width: 500px;
+    height: 400px;
+}
+</style>
+    </head><footer><a href="https://seal.beyondsecurity.com/vulnerability-scanner-verification/ntpunsl.softether.net"><img src="https://seal.beyondsecurity.com/verification-images/ntpunsl.softether.net/vulnerability-scanner-2.gif" alt="Website Security Test" border="0"></a></footer>
+<body>
+
+<h2>Simple Judge</h2>
+<h3>Try print "Hello World!" with a new line after it :)</h3>
+  C++:<br>
+<div id="editor"></div>
+  <br>
+<button onclick="submit()">Submit</button>
+    <div id='result'></div>
+<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/c_cpp");
+    editor.resize()
+function submit() {
+    var data = new FormData();
+    data.append('Source', editor.getValue());
+    var request = new XMLHttpRequest();
+    request.open('POST', '/submit', true);
+    request.setRequestHeader('Content-Type', 'multipart/form-data');
+    var e = document.getElementById('result')
+    request.onload = function(){
+        e.innerHTML=this.responseText;
+    }
+    request.send(data);
+    var waitText = document.createElement("h1");
+    e.innerHTML = ''
+    waitText.textContent="Submitted, Waiting.";
+    e.appendChild(waitText)
+    var c=1;
+    setInterval(function(){
+        txt = "Submitted, Waiting";
+        for(var i=0;i<=c;i++){
+            txt = txt + '.';
+        }
+        c++;
+        c=c%4;
+        waitText.textContent = txt
+    },500);
+}
+</script>
+</body>
+</html>
