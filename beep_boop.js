@@ -5,19 +5,6 @@ var ins = new ideone(config.accessToken,config.customid)
 var http = require('http')
 ins.setMode(44)
 var port = 80
-var tagsToReplace = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;'
-};
-
-function replaceTag(tag) {
-    return tagsToReplace[tag] || tag;
-}
-
-function safe_tags_replace(str) {
-    return str.replace(/[&<>]/g, replaceTag);
-}
 
 var server = http.createServer((req,res)=>{
     console.log('.' + req.url)

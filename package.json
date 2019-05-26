@@ -16,9 +16,7 @@
     "eslint-plugin-react": "^7.13.0"
   },
   "dependencies": {
-    "concat-stream": "^2.0.0",
     "eslint-config-defaults": "^9.0.0",
-    "highlight.js": "^9.15.6",
     "ideone-node": "0.0.3"
   },
   "repository": {
